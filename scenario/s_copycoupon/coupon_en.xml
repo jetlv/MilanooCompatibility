@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="EN_copycoupon" thread-count="1" parallel="tests">
+	<parameter name="registUrl" value="https://test.item.www.milanoo.com/member/reg.html" />
+	<parameter name="couponPage" value="http://test.item.www.milanoo.com/member/CouponPromotion.html" />
+	<test name="ChromeTest">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.milanoo.tests.TestCopyCoupon"></class>
+		</classes>
+	</test>
+	<!--  <test name="FirefoxTest">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.milanoo.tests.TestCopyCoupon"></class>
+		</classes>
+	</test>
+
+	<test name="IETest">
+		<parameter name="browser" value="internet explorer" />
+		<classes>
+			<class name="com.milanoo.tests.TestCopyCoupon"></class>
+		</classes>
+	</test>
+	-->
+</suite>
