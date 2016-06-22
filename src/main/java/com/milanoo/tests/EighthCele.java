@@ -46,7 +46,9 @@ public class EighthCele {
 			dc.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 			dc.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
 			if(browser.equals("Microsoft Edge")) {
-//				dc.setPlatform(platform);
+				dc = DesiredCapabilities.edge();
+				dc.setPlatform(Platform.WIN10);
+				
 			}
 		}
 //		if(browser.equals("Microsoft Edge")) {

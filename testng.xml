@@ -5,9 +5,9 @@
 <suite name="All">
 	<suite-files>
 		<!-- 米兰8周年 -->
-		<!-- 
+		
 		<suite-file path="scenario/s_8th/cele_de.xml"></suite-file>
-		<suite-file path="scenario/s_8th/cele_en.xml"></suite-file>
+		<!-- <suite-file path="scenario/s_8th/cele_en.xml"></suite-file>
 		<suite-file path="scenario/s_8th/cele_es.xml"></suite-file>
 		<suite-file path="scenario/s_8th/cele_fr.xml"></suite-file>
 		<suite-file path="scenario/s_8th/cele_it.xml"></suite-file>
