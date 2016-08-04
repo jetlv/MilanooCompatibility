@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="EN_base" thread-count="4" parallel="tests">
+	<parameter name="pageUrl"
+		value="http://www.milanoo.com/" />
+	<test name="FireFox_base">
+		<parameter name="browser" value="firefox" />
+		<parameter name="version" value="20.0" />
+		<parameter name="platform" value="MAC" />
+		<classes>
+			<class name="com.milanoo.tests.BaseProgress" />
+		</classes>
+	</test> <!-- Test -->
+	<test name="Chrome_base">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="26.0" />
+		<parameter name="platform" value="WINDOWS" />
+		<classes>
+			<class name="com.milanoo.tests.BaseProgress" />
+		</classes>
+	</test> <!-- Test -->
+	<test name="Edge_base">
+		<parameter name="browser" value="Edge" />
+		<parameter name="version" value="13" />
+		<parameter name="platform" value="WINDOWS" />
+		<classes>
+			<class name="com.milanoo.tests.BaseProgress" />
+		</classes>
+	</test>
+	<test name="Safari_base">
+		<parameter name="browser" value="safari" />
+		<parameter name="version" value="6.0" />
+		<parameter name="platform" value="Mac" />
+		<classes>
+			<class name="com.milanoo.tests.BaseProgress" />
+		</classes>
+	</test><!-- Test -->
+</suite> <!-- Suite -->
+	

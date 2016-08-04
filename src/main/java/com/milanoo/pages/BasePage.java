@@ -1,9 +1,12 @@
 package com.milanoo.pages;
 
-@Deprecated
+//@Deprecated
+
+/**
+ * 
+ * @author Administrator
+ * 通用的方法封装
+ */
 public class BasePage {
 	
-	public void waitForXpath(String xpath, String millSeconds) {
-		
-	}
 }
