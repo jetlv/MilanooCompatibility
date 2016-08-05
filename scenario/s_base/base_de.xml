@@ -2,10 +2,10 @@
  
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="EN_base" thread-count="4" parallel="tests">
-	<parameter name="pageUrl" value="http://www.milanoo.com/" />
-	<parameter name="productUrl" value="http://www.milanoo.com/produkt/schoene-pvc-1-teilig-nail-sticker-p71814.html" />
+<suite name="DE_base" thread-count="4" parallel="tests">
+	<parameter name="pageUrl" value="http://www.milanoo.com/de" />
 	<parameter name="project" value="BaseProgress" />
+	<parameter name="productUrl" value="http://www.milanoo.com/de/produkt/schoene-pvc-1-teilig-nail-sticker-p71814.html" />
 	<test name="FireFox_base">
 		<parameter name="browser" value="firefox" />
 		<parameter name="version" value="47.0" />

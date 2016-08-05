@@ -5,6 +5,12 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class Global {
+	
+	/**
+	 * hub 地址
+	 */
+	public static final String HUB = "https://jetlyu1:kjikHKiKe4NfPwsz2rkH@hub-cloud.browserstack.com/wd/hub";
+	
 	/**
 	 * 导入UI系统已经封装的所有页面
 	 */

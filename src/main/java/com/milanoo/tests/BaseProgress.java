@@ -14,7 +14,11 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.milanoo.configure.Global;
 import com.milanoo.pages.HomePage;
+import com.milanoo.pages.Operations;
+import com.milanoo.pages.ProductPage;
+import com.milanoo.pages.ShoppingCartPage;
 
 /**
  * 
@@ -32,36 +36,61 @@ public class BaseProgress {
 	 * @throws InterruptedException
 	 */
 	@BeforeTest
-	@Parameters({ "browser", "version", "platform", "pageUrl" })
-	public void setUp(String browser, String version, String platform, String pageUrl)
+	@Parameters({ "browser", "version", "platform", "project", "pageUrl"})
+	public void setUp(String browser, String version, String platform, String project, String pageUrl)
 			throws Exception {
 		DesiredCapabilities capability = new DesiredCapabilities();
 		capability.setCapability("platform", platform);
 		capability.setCapability("browserName", browser);
 		capability.setCapability("browserVersion", version);
-		capability.setCapability("project", "base");
+		capability.setCapability("project", project);
 		capability.setCapability("build", "1.0");
 		driver = new RemoteWebDriver(
 				new URL(
-						"https://jetlyu1:kjikHKiKe4NfPwsz2rkH@hub-cloud.browserstack.com/wd/hub"),
+						Global.HUB),
 				capability);
 		
 		driver.get(pageUrl);
 	}
 
 	/**
-	 * 
-	 * @throws InterruptedException
-	 *             测试拿红包
+	 * 商品加入购物车 - checkout
+	 * @throws Exception 
+	 *            
 	 */
 	@Test
-	public void testAquireEnvelop() throws InterruptedException {
+	@Parameters({"productUrl"})
+	public void testBaseProgress(String productUrl) throws Exception {
 		HomePage hp = PageFactory.initElements(driver,
 				HomePage.class);
 		hp.click_close_icon();
 		Thread.sleep(2000);
 	
 		assertEquals(hp.verify_searchicon_visible(), true);
+		
+		Operations ops = new Operations(driver);
+		
+		ops.NavigateTo(productUrl);
+		
+		//waitng for 2 secs
+		ops.WaitForPageToLoad(2);
+		
+		ProductPage pp = PageFactory.initElements(driver, ProductPage.class);
+		
+		assertEquals(pp.button_addtocart_displayed(), true);
+		
+		pp.click_addtocart();
+		
+		ops.WaitForPageToLoad(2);
+		
+		ShoppingCartPage scp = PageFactory.initElements(driver, ShoppingCartPage.class);
+		
+		assertEquals(scp.milanoo_checkout_button_exists(), true);
+		
+		scp.click_milanoo_checkout_button();
+		
+		ops.WaitForPageToLoad(5);
+
 	}
 
 	@AfterTest

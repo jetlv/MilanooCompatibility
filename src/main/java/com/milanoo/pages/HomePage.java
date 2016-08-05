@@ -18,8 +18,20 @@ public class HomePage {
 		icon_close_welcome.click();
 	}
 	
+	/**
+	 * 验证搜索按钮是存在的
+	 * @return
+	 */
 	public boolean verify_searchicon_visible()  {
 		return icon_search.isDisplayed();
+	}
+	
+	/**
+	 * 点击搜索框
+	 */
+	public void click_searchicon() {
+		icon_search.click();
+		System.out.println("Searched icon was clicked");
 	}
 	
 //	public void 
