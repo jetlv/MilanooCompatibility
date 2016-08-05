@@ -6,6 +6,7 @@
 	<suite-files>
 		<suite-file path="scenario/s_base/base_de.xml"></suite-file>
 		<suite-file path="scenario/s_base/base_en.xml"></suite-file>
+		<suite-file path="scenario/s_base/base_fr.xml"></suite-file>
 		<!-- 米兰8周年 -->
 		<!-- <suite-file path="scenario/s_8th/cele_de.xml"></suite-file>
 		<suite-file path="scenario/s_8th/cele_en.xml"></suite-file>
