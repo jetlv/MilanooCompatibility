@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="preparation" parallel="false">
+    <test name="start preparing">
+        <classes>
+            <class name="com.milanoo.prepare.Preparation"/>
+        </classes>
+    </test>
+ 
+</suite>

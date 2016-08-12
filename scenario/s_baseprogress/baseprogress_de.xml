@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="de_baseprogress" thread-count="4" parallel="tests">
+    <parameter name="site" value="de"/>
+    <parameter name="project" value="baseprogress"/>
+    <parameter name="pageUrl" value="http://www.milanoo.com/de"/>
+    <parameter name="productUrl" value="http://www.milanoo.com/de/produkt/schoene-pvc-1-teilig-nail-sticker-p71814.html"/>
+    <test name="ie_baseprogress">
+        <parameter name="browser" value="ie"/>
+        <parameter name="version" value="11.0"/>
+        <parameter name="platform" value="WINDOWS"/>
+        <classes>
+            <class name="com.milanoo.tests.BaseProgress"/>
+        </classes>
+    </test>
+    <test name="edge_baseprogress">
+        <parameter name="browser" value="edge"/>
+        <parameter name="version" value="13.0"/>
+        <parameter name="platform" value="WINDOWS"/>
+        <classes>
+            <class name="com.milanoo.tests.BaseProgress"/>
+        </classes>
+    </test>
+    <test name="chrome_baseprogress">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="version" value="52.0"/>
+        <parameter name="platform" value="WINDOWS"/>
+        <classes>
+            <class name="com.milanoo.tests.BaseProgress"/>
+        </classes>
+    </test>
+    <test name="firefox_baseprogress">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="version" value="47.0"/>
+        <parameter name="platform" value="MAC"/>
+        <classes>
+            <class name="com.milanoo.tests.BaseProgress"/>
+        </classes>
+    </test>
+</suite>

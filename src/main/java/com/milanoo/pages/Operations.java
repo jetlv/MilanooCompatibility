@@ -386,6 +386,23 @@ public class Operations {
 		((JavascriptExecutor) driver).executeScript(jsForChrome);
 
 	}
+	
+	/**
+	 * 提供一个数字 让页面按照这个偏移量下滑
+	 */
+	public void ScrollDownByOffset(int offset) {
+
+		String ofs = String.valueOf(offset);
+//		String js = "var q=document.documentElement.scrollTop=10000";
+//
+//		((JavascriptExecutor) driver).executeScript(js);
+
+		// 附加另一个赋值，不会产生负面影响： 针对Chrome不认识第一个js代码的问题
+		String jsForChrome = "var e = document.body.scrollTop = " + ofs;
+
+		((JavascriptExecutor) driver).executeScript(jsForChrome);
+
+	}
 
 	/**
 	 * 

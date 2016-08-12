@@ -3,6 +3,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="EN_base" thread-count="4" parallel="tests">
+	<parameter name="site" value="en" />
 	<parameter name="pageUrl" value="http://www.milanoo.com/" />
 	<parameter name="productUrl" value="http://www.milanoo.com/produkt/schoene-pvc-1-teilig-nail-sticker-p71814.html" />
 	<parameter name="project" value="BaseProgress" />
