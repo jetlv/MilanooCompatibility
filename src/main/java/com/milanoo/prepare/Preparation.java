@@ -56,7 +56,7 @@ public class Preparation {
 			int threadCount = 4;
 			Map<String, String> parameters = new HashMap<String, String>();
 			parameters.put("site", lang);
-			parameters.put("pageUrl", "http://www.milanoo.com/" + lang
+			parameters.put("pageUrl", "http://test.item.www.milanoo.com/" + lang
 					+ "/search?type=search&keyword=");
 			parameters.put("project", project);
 

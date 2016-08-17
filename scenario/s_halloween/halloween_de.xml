@@ -3,7 +3,7 @@
 <suite name="de_halloween" thread-count="4" parallel="tests">
     <parameter name="site" value="de"/>
     <parameter name="project" value="halloween"/>
-    <parameter name="pageUrl" value="http://www.milanoo.com/de/search?type=search&amp;keyword="/>
+    <parameter name="pageUrl" value="http://test.item.www.milanoo.com/de/search?type=search&amp;keyword="/>
     <test name="firefox_halloween">
         <parameter name="browser" value="firefox"/>
         <parameter name="version" value="47.0"/>
