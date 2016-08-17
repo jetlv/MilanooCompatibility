@@ -3,5 +3,11 @@
 <suite name="All">
     <suite-files>
         <suite-file path="scenario/s_halloween/halloween_en.xml"/>
+        <suite-file path="scenario/s_halloween/halloween_de.xml"/>
+        <suite-file path="scenario/s_halloween/halloween_es.xml"/>
+        <suite-file path="scenario/s_halloween/halloween_fr.xml"/>
+        <suite-file path="scenario/s_halloween/halloween_it.xml"/>
+        <suite-file path="scenario/s_halloween/halloween_pt.xml"/>
+        <suite-file path="scenario/s_halloween/halloween_jp.xml"/>
     </suite-files>
 </suite>

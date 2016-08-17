@@ -48,8 +48,8 @@ public class Preparation {
 	 * 万圣节准备
 	 */
 	public void PrepareHalloween() throws IOException {
-//		String[] langs = { "en", "de", "es", "fr", "it", "pt", "jp" };
-		String[] langs = { "en"};
+		String[] langs = { "en", "de", "es", "fr", "it", "pt", "jp" };
+//		String[] langs = { "en"};
 		for (int i = 0; i < langs.length; i++) {
 			String lang = langs[i];
 			String project = "halloween";

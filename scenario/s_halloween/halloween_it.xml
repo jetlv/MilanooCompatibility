@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <suite name="it_halloween" thread-count="4" parallel="tests">
-    <listeners>
-        <listener class-name="com.milanoo.listener.MilanooIResultListener"/>
-    </listeners>
     <parameter name="site" value="it"/>
     <parameter name="project" value="halloween"/>
     <parameter name="pageUrl" value="http://www.milanoo.com/it/search?type=search&amp;keyword="/>

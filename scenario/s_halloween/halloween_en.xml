@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <suite name="en_halloween" thread-count="4" parallel="tests">
-
     <parameter name="site" value="en"/>
     <parameter name="project" value="halloween"/>
     <parameter name="pageUrl" value="http://www.milanoo.com/en/search?type=search&amp;keyword="/>

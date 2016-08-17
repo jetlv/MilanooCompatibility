@@ -19,7 +19,8 @@ import com.milanoo.tests.TestBase;
  * @author Administrator 测试报告截图配置
  */
 public class MilanooIResultListener extends TestListenerAdapter {
-
+	
+		
 	/**
 	 * 失败后截图
 	 */
