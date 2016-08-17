@@ -270,7 +270,7 @@ public class TestHalloween extends TestBase{
 			ops.WaitForPageToLoad(2);
 			int lengthOfResult = driver.findElements(
 					By.xpath("//div[@id='gift-list']/div")).size();
-			assertEquals(5,lengthOfResult);
+			assertEquals(1,lengthOfResult);
 
 			/**
 			 * 第二次抽奖
