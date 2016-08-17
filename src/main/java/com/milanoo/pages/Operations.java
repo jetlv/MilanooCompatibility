@@ -2,6 +2,7 @@ package com.milanoo.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,6 +29,56 @@ public class Operations {
 	public Operations(WebDriver driver) {
 		super();
 		this.driver = driver;
+	}
+	
+	/**
+	 * 
+	 * @param selector
+	 * @param key
+	 * @return
+	 * @throws ValidationException
+	 * 
+	 * 获取某元素的文字
+	 */
+	public String getText(String selector, String key) throws ValidationException {
+		WebElement element = getSpecificWebElement(selector, key);
+		
+		return element.getText();
+	}
+	
+	/**
+	 * 
+	 * @param selector
+	 * @param key
+	 * @throws ValidationException
+	 * 
+	 * 采用Action进行坐标点击，用于对付 Element not clickable.
+	 */
+	public void ClickByXY(String selector, String key) throws ValidationException {
+		WebElement element = getSpecificWebElement(selector, key);
+
+		Actions a = new Actions(driver);
+		
+		Point p = element.getLocation();
+		
+		a.moveByOffset(p.x, p.y).click().perform();
+	}
+	
+	/**
+	 * 
+	 * @param selector
+	 * @param key
+	 * @throws ValidationException
+	 * 
+	 * 采用Action进行点击，用于对付 Element not clickable.
+	 */
+	public void ClickByActions(String selector, String key) throws ValidationException {
+		WebElement element = getSpecificWebElement(selector, key);
+
+		Actions a = new Actions(driver);
+		
+		a.moveToElement(element).click().perform();
+		
 	}
 	
 	/**

@@ -7,14 +7,20 @@ import java.util.Properties;
 public class Global {
 	
 	/**
-	 * hub 地址
+	 * 本地hub地址
 	 */
-	public static final String HUB = "https://sinatester1:fqQNcsFoY1Fqdscgp56p@hub-cloud.browserstack.com/wd/hub";
+	
+	public static final String LOCAL_HUB = "http://192.168.12.104:7777/wd/hub";
+	
+	/**
+	 * browserstack hub 地址
+	 */
+	public static final String HUB = "https://testerhome1:cyEpq6witukyRzksyJSE@hub-cloud.browserstack.com/wd/hub";
 	
 	/**
 	 * 标识成功失败的基本地址
 	 */
-	public static final String MARK = "https://sinatester1:fqQNcsFoY1Fqdscgp56p@www.browserstack.com/automate/sessions";
+	public static final String MARK = "https://testerhome1:cyEpq6witukyRzksyJSE@www.browserstack.com/automate/sessions";
 	
 	/**
 	 * 导入UI系统已经封装的所有页面

@@ -17,6 +17,7 @@ import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
+import org.junit.Ignore;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -38,17 +39,57 @@ public class Preparation {
 	public static void main(String[] args) throws IOException {
 		Preparation p = new Preparation();
 		p.setUp();
-		p.prepareBaseProgress();
+		p.PrepareHalloween();
 		p.tearDown();
 	}
 
 	@Test
 	/**
+	 * 万圣节准备
+	 */
+	public void PrepareHalloween() throws IOException {
+//		String[] langs = { "en", "de", "es", "fr", "it", "pt", "jp" };
+		String[] langs = { "en"};
+		for (int i = 0; i < langs.length; i++) {
+			String lang = langs[i];
+			String project = "halloween";
+			int threadCount = 4;
+			Map<String, String> parameters = new HashMap<String, String>();
+			parameters.put("site", lang);
+			parameters.put("pageUrl", "http://www.milanoo.com/" + lang
+					+ "/search?type=search&keyword=");
+			parameters.put("project", project);
+
+			String testClass = "com.milanoo.tests.TestHalloween";
+
+			BusinessEntity be = new BusinessEntity(project, lang, threadCount,
+					parameters, testClass);
+			
+//			BrowserCap MAC_FIREFOX_47 = new BrowserCap("firefox", "47.0", "MAC");
+			BrowserCap WIN7_CHROME_52 = new BrowserCap("chrome", "52.0", "WINDOWS");
+			BrowserCap WIN7_FIREFOR_47 =new BrowserCap("firefox", "47.0", "WINDOWS"); 
+			
+			List<BrowserCap> caps = new ArrayList<BrowserCap>();
+			
+			caps.add(WIN7_FIREFOR_47);
+			caps.add(WIN7_CHROME_52);
+			
+			be.setBrowserCaps(caps);
+			
+			writeSingleXML(be);
+
+		}
+
+	}
+
+	@Test
+	@Ignore
+	/**
 	 * 基本流程的xml准备
 	 * @throws IOException
 	 */
 	public void prepareBaseProgress() throws IOException {
-		String[] langs = {"en", "de", "es", "fr", "it", "pt" , "ru", "jp"};
+		String[] langs = { "en", "de", "es", "fr", "it", "pt", "ru", "jp" };
 		for (int i = 0; i < langs.length; i++) {
 			String lang = langs[i];
 			String project = "baseprogress";
@@ -65,6 +106,7 @@ public class Preparation {
 					parameters, testClass);
 			be.setBrowserCaps(commonBrowsers());
 
+			
 			writeSingleXML(be);
 
 		}
@@ -111,7 +153,11 @@ public class Preparation {
 		root.addAttribute("thread-count", String.valueOf(be.getThreadCount()));
 		root.addAttribute("parallel", "tests");
 		
-		
+//		/** 监听器注入 */
+//		Element listeners = root.addElement("listeners");
+//		Element resultListener = listeners.addElement("listener");
+//		resultListener.addAttribute("class-name", "com.milanoo.listener.MilanooIResultListener");
+
 		/** 参数注入 */
 		Map<String, String> parameters = be.getParameters();
 
@@ -178,13 +224,14 @@ public class Preparation {
 	private List<BrowserCap> commonBrowsers() {
 		BrowserCap MAC_FIREFOX_47 = new BrowserCap("firefox", "47.0", "MAC");
 		BrowserCap WIN7_CHROME_52 = new BrowserCap("chrome", "52.0", "WINDOWS");
-		BrowserCap WIN10_EDGE_13 = new BrowserCap("edge", "13.0", "WINDOWS");
+//		BrowserCap WIN10_EDGE_13 = new BrowserCap("edge", "13.0", "WINDOWS");
 		BrowserCap WIN7_IE_11 = new BrowserCap("ie", "11.0", "WINDOWS");
+		BrowserCap MAC_SAFARI_8 = new BrowserCap("safari", "8.0", "MAC");
 
 		List<BrowserCap> bcs = new ArrayList<BrowserCap>();
 
 		bcs.add(WIN7_IE_11);
-		bcs.add(WIN10_EDGE_13);
+		bcs.add(MAC_SAFARI_8);
 		bcs.add(WIN7_CHROME_52);
 		bcs.add(MAC_FIREFOX_47);
 

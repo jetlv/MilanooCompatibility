@@ -2,13 +2,6 @@
 
 <suite name="All">
     <suite-files>
-        <suite-file path="scenario/s_baseprogress/baseprogress_en.xml"/>
-        <suite-file path="scenario/s_baseprogress/baseprogress_de.xml"/>
-        <suite-file path="scenario/s_baseprogress/baseprogress_es.xml"/>
-        <suite-file path="scenario/s_baseprogress/baseprogress_fr.xml"/>
-        <suite-file path="scenario/s_baseprogress/baseprogress_it.xml"/>
-        <suite-file path="scenario/s_baseprogress/baseprogress_pt.xml"/>
-        <suite-file path="scenario/s_baseprogress/baseprogress_ru.xml"/>
-        <suite-file path="scenario/s_baseprogress/baseprogress_jp.xml"/>
+        <suite-file path="scenario/s_halloween/halloween_en.xml"/>
     </suite-files>
 </suite>
